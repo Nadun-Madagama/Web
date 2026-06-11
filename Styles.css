@@ -33,11 +33,21 @@ body {
     background-color: #1e7e34;
 }
 
-.active a {
-    background: rgba(255,255,255,0.2);
+.pageLinks li.active a {
     color: white;
-    border-radius: 25px;
-    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.pageLinks li.active::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 10px;
 }
 /*Styles for service cards*/
 
