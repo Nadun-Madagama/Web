@@ -192,3 +192,45 @@ body {
     font-size: 16px;
     margin: 0;
 }
+
+/*stats section styles*/
+.statsList {
+    background-color: #28a745; 
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    align-items: center;
+    text-align: center;
+}
+
+.statItem {
+    min-width: 200px; 
+    margin: 15px;
+}
+
+.statItem .number {
+    color: #fdfd96; 
+    font-size: 40px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.statItem .number:hover {
+    color: #fdfd96; 
+    font-size: 40px;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
+.statItem .description {
+    color: #fffffff7; 
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
