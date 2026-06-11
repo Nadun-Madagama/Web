@@ -119,3 +119,9 @@ body {
     background-color: #fdfd9695;
     transform: translateY(2px);
 }
+
+
+.topImage {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
