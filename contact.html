@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - E-Channeling</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Doctors</a>
+                <a href="#">Diseases</a>
+                <a href="#">Register</a>
+                <a href="#">DocDash</a>
+                <a href="#" class="active">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        
+        <section class="contact-hero-section">
+            <div class="hero-image-wrapper">
+                <img  src="doctor.jpg" alt="Doctor">
+            </div>
+            
+            <div class="form-wrapper">
+                <h2 class="form-title">Contact Us</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter a valid email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Enter your message" required></textarea>
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I accept the <a href="#">Terms of Service</a></label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="info-cards-container">
+            <div class="info-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <h3>CALL US</h3>
+                <p>0112345675</p>
+                <p>0114573788</p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h3>LOCATION</h3>
+                <p>121 Main Street</p>
+                <p>Colombo 10.</p>
+                
+            </div>
+
+            <div class="info-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h3>HOURS</h3>
+                <p>Mon – Fri : 6 am – 11 pm</p>
+                <p>Sat, Sun : 7 am – 10 pm</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3 class="footer-logo">E-Channeling</h3>
+                <p class="footer-text">
+                    Comprehensive healthcare management at your fingertips. Book your specialist appointments instantly and securely.
+                </p>
+            </div>
+            <div class="footer-right">
+                <h4 class="footer-contact-heading">Contact</h4>
+                <a href="#" class="footer-btn">Contact Us &rarr;</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 E-Channeling. All rights reserved.</p>
+            <button class="register-floating-btn">+ Register</button>
+        </div>
+    </footer>
+
+</body>
+</html>
