@@ -12,10 +12,9 @@
     <nav class="topBar">
         <ul class="pageLinks">
           <li><a href="index.html">Home</a></li>
-          <li><a href="doctors.html">Doctors</a></li>
           <li><a href="specialities.html">Specialities</a></li>
-          <li class="active"><a href="register.html">Register</a></li>
-          <li><a href="doctors-dashboard.html">DocDash</a></li>
+          <li class="active"><a href="register.html">Book Appointment</a></li>
+          <li><a href="admin-login.html">DocDash</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="med_centers.html">Medical Centers</a></li>
         </ul>
@@ -120,13 +119,13 @@
                 <div class="formGroup">
                     <label for="disease">Disease / Condition <span class="required">*</span></label>
                     <select id="disease" onchange="updateDoctors()">
-                        <option value="">-- Select a condition --</option>
+                        <option value="">-- Select a specialty --</option>
                         <option value="cardiology">Heart Disease (Cardiology)</option>
                         <option value="dermatology">Skin Issues (Dermatology)</option>
                         <option value="neurology">Headaches / Neurology</option>
                         <option value="orthopedics">Bone & Joint (Orthopedics)</option>
                         <option value="pediatrics">Child Health (Pediatrics)</option>
-                        <option value="general">General Checkup</option>
+                        <option value="gynecology">Women's Health (Gynecology)</option>
                     </select>
                     <span class="errorMsg" id="diseaseError">Please select a condition.</span>
                 </div>
@@ -224,8 +223,15 @@
             </div>
 
             <div class="footerColumn">
-                <h3 class="footerTitle">Contact</h3>
-                <a href="contact.html" class="footerLink">Contact Us →</a>
+                <h3 class="footerTitle">Quick Links</h3>
+                <ul class="footerNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="specialities.html">Specialities</a></li>
+                    <li><a href="register.html">Book Appointment</a></li>
+                    <li><a href="admin-login.html">DocDash</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="med_centers.html">Medical Centers</a></li>
+                </ul>
             </div>
 
             <div class="footerBottom">

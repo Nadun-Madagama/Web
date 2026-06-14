@@ -4,28 +4,28 @@
 // --- Doctor Data ---
 var doctorData = {
     cardiology: [
-        { name: "Dr. R. Perera", exp: "12 years", fee: "Rs. 2000" },
-        { name: "Dr. S. Fernando", exp: "8 years", fee: "Rs. 1800" }
+        { name: "Dr. Dulsara Sachintha", exp: "15 years", fee: "Rs. 2000" },
+        { name: "Dr. Sanushi Nethmika", exp: "10 years", fee: "Rs. 1800" }
     ],
     dermatology: [
-        { name: "Dr. A. Silva", exp: "10 years", fee: "Rs. 1500" },
-        { name: "Dr. N. Jayawardena", exp: "6 years", fee: "Rs. 1200" }
+        { name: "Dr. Dasuni Rajapaksa", exp: "12 years", fee: "Rs. 1500" },
+        { name: "Dr. Nisal Dasanayake", exp: "11 years", fee: "Rs. 1500" }
     ],
     neurology: [
-        { name: "Dr. M. Bandara", exp: "15 years", fee: "Rs. 2500" },
-        { name: "Dr. T. Karunaratne", exp: "9 years", fee: "Rs. 2200" }
+        { name: "Dr. Okanda Sudusinghe", exp: "24 years", fee: "Rs. 2500" },
+        { name: "Dr. Hashara Gunarathna", exp: "11 years", fee: "Rs. 2200" }
     ],
     orthopedics: [
-        { name: "Dr. P. Wickramasinghe", exp: "11 years", fee: "Rs. 1800" },
-        { name: "Dr. C. Rajapaksa", exp: "7 years", fee: "Rs. 1600" }
+        { name: "Dr. Achinthya Pasansith", exp: "14 years", fee: "Rs. 1800" },
+        { name: "Dr. Achini Madushani", exp: "9 years", fee: "Rs. 1600" }
     ],
     pediatrics: [
-        { name: "Dr. D. Kumari", exp: "13 years", fee: "Rs. 1500" },
-        { name: "Dr. L. Senanayake", exp: "5 years", fee: "Rs. 1200" }
+        { name: "Dr. Isuri Deemanthi", exp: "9 years", fee: "Rs. 1500" },
+        { name: "Dr. Fazna Kamil", exp: "7 years", fee: "Rs. 1500" }
     ],
-    general: [
-        { name: "Dr. K. Dissanayake", exp: "20 years", fee: "Rs. 1000" },
-        { name: "Dr. H. Navaratne", exp: "10 years", fee: "Rs. 800" }
+    gynecology: [
+        { name: "Dr. Nadun Madagama", exp: "16 years", fee: "Rs. 2000" },
+        { name: "Dr. Dilani Prathibha", exp: "8 years", fee: "Rs. 1800" }
     ]
 };
 

@@ -149,6 +149,52 @@
         status: 'On Leave', initials: 'ND',
         schedule: [],
         appointments: []
+      },
+      {
+        name: 'Dr. Sanushi Nethmika', spec: 'Cardiologist', hospital: 'Colombo South Teaching Hospital',
+        status: 'On Duty', initials: 'SN',
+        schedule: [
+          { time: '08:00 – 11:00 AM', type: 'Active', cap: 6, filled: 3 },
+          { time: '01:00 – 03:00 PM', type: 'Active', cap: 4, filled: 1 }
+        ],
+        appointments: [
+          { no:'#001', time:'08:00 AM', patient:'Sunil Rajapakse', reason:'Routine heart check', status:'Done' },
+          { no:'#002', time:'08:30 AM', patient:'Kanthi Perera', reason:'Chest discomfort', status:'Confirmed' }
+        ]
+      },
+      {
+        name: 'Dr. Hashara Gunarathna', spec: 'Neurologist', hospital: 'NHSL, Colombo',
+        status: 'On Duty', initials: 'HG',
+        schedule: [
+          { time: '09:00 – 12:00 PM', type: 'Active', cap: 8, filled: 4 }
+        ],
+        appointments: [
+          { no:'#001', time:'09:00 AM', patient:'Nimal Jayasinghe', reason:'Migraine checkup', status:'Done' },
+          { no:'#002', time:'09:30 AM', patient:'Priya Wijewardena', reason:'Nerve pain review', status:'Confirmed' }
+        ]
+      },
+      {
+        name: 'Dr. Achini Madushani', spec: 'Orthopedic Surgeon', hospital: 'Kandy General Hospital',
+        status: 'On Duty', initials: 'AM',
+        schedule: [
+          { time: '08:30 – 11:30 AM', type: 'Active', cap: 6, filled: 2 }
+        ],
+        appointments: [
+          { no:'#001', time:'08:30 AM', patient:'Kamal Silva', reason:'Fracture review', status:'Done' },
+          { no:'#002', time:'09:00 AM', patient:'Soma Weerasinghe', reason:'Joint pain consultation', status:'Confirmed' }
+        ]
+      },
+      {
+        name: 'Dr. Dilani Prathibha', spec: 'Gynecologist', hospital: 'De Soysa Hospital, Colombo',
+        status: 'On Duty', initials: 'DP',
+        schedule: [
+          { time: '09:00 – 11:00 AM', type: 'Active', cap: 5, filled: 3 },
+          { time: '01:00 – 03:00 PM', type: 'Active', cap: 5, filled: 2 }
+        ],
+        appointments: [
+          { no:'#001', time:'09:00 AM', patient:'Asha Fernando', reason:'Antenatal care', status:'Done' },
+          { no:'#002', time:'09:20 AM', patient:'Rupa Silva', reason:'Routine exam', status:'Confirmed' }
+        ]
       }
     ];
 

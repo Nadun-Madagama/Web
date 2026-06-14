@@ -15,10 +15,9 @@
   <nav class="topBar">
     <ul class="pageLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="doctors.html">Doctors</a></li>
       <li><a href="specialities.html">Specialities</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li class="active"><a href="doctors-dashboard.html">DocDash</a></li>
+      <li><a href="register.html">Book Appointment</a></li>
+      <li class="active"><a href="admin-login.html">DocDash</a></li>
       <li><a href="contact.html">Contact Us</a></li>
       <li><a href="med_centers.html">Medical Centers</a></li>
     </ul>
@@ -49,7 +48,7 @@
     <div class="stat-item">
       <i class="ti ti-users"></i>
       <div>
-        <span class="stat-num">6</span>
+        <span class="stat-num">12</span>
         <span class="stat-lbl">Total Doctors</span>
       </div>
     </div>
@@ -57,7 +56,7 @@
     <div class="stat-item">
       <i class="ti ti-calendar-check"></i>
       <div>
-        <span class="stat-num">74</span>
+        <span class="stat-num">87</span>
         <span class="stat-lbl">Appointments Today</span>
       </div>
     </div>
@@ -65,7 +64,7 @@
     <div class="stat-item">
       <i class="ti ti-activity"></i>
       <div>
-        <span class="stat-num">5</span>
+        <span class="stat-num">10</span>
         <span class="stat-lbl">On Duty</span>
       </div>
     </div>
@@ -73,7 +72,7 @@
     <div class="stat-item">
       <i class="ti ti-calendar-off"></i>
       <div>
-        <span class="stat-num">1</span>
+        <span class="stat-num">2</span>
         <span class="stat-lbl">On Leave</span>
       </div>
     </div>
@@ -320,7 +319,7 @@
       </div>
 
        <!-- Doctor 8 -->
-      <div class="doc-card" data-name="dr. nisal dasanayake" data-spec="Gynecologist">
+      <div class="doc-card" data-name="dr. nisal dasanayake" data-spec="dermatologist">
         <div class="doc-card-top">
           <div class="doc-avatar" style="background:#f0ede6;color:#5f5e5a">ND</div>
           <div class="doc-badge on-leave">On Leave</div>
@@ -350,6 +349,130 @@
         </div>
       </div>
 
+      <!-- Doctor 9 -->
+      <div class="doc-card" data-name="dr. sanushi nethmika" data-spec="cardiologist">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#faeeda;color:#854f0b">SN</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Sanushi Nethmika</h3>
+          <p class="doc-spec"><i class="ti ti-heart-rate-monitor"></i> Cardiologist</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> Colombo South Teaching Hospital</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 4 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 08:30 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:40%"></div>
+            </div>
+            <span class="slot-txt">4 / 10 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(8)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(8)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor 10 -->
+      <div class="doc-card" data-name="dr. hashara gunarathna" data-spec="neurologist">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#e6f1fb;color:#0c447c">HG</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Hashara Gunarathna</h3>
+          <p class="doc-spec"><i class="ti ti-brain"></i> Neurologist</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> NHSL, Colombo</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 2 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 09:30 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:50%"></div>
+            </div>
+            <span class="slot-txt">4 / 8 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(9)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(9)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor 11 -->
+      <div class="doc-card" data-name="dr. achini madushani" data-spec="orthopedic surgeon">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#eaf3de;color:#3b6d11">AM</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Achini Madushani</h3>
+          <p class="doc-spec"><i class="ti ti-bone"></i> Orthopedic Surgeon</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> Kandy General Hospital</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 2 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 09:00 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:33%"></div>
+            </div>
+            <span class="slot-txt">2 / 6 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(10)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(10)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor 12 -->
+      <div class="doc-card" data-name="dr. dilani prathibha" data-spec="gynecologist">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#e6f1fb;color:#185FA5">DP</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Dilani Prathibha</h3>
+          <p class="doc-spec"><i class="ti ti-gender-female"></i> Gynecologist</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> De Soysa Hospital, Colombo</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 5 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 09:00 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:50%"></div>
+            </div>
+            <span class="slot-txt">5 / 10 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(11)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(11)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
     </div><!-- end doctor-grid -->
 
     <!-- Empty state (hidden) -->
@@ -372,8 +495,15 @@
       <p class="footerText">Comprehensive healthcare management at your fingertips. Book your specialist appointments instantly and securely.</p>
     </div>
     <div class="footerColumn">
-      <h3 class="footerTitle">Contact</h3>
-      <a href="contact.html" class="footerLink">Contact Us →</a>
+      <h3 class="footerTitle">Quick Links</h3>
+      <ul class="footerNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="specialities.html">Specialities</a></li>
+        <li><a href="register.html">Book Appointment</a></li>
+        <li><a href="admin-login.html">DocDash</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="med_centers.html">Medical Centers</a></li>
+      </ul>
     </div>
     <div class="footerBottom">
       <p>&copy; 2026 E-Channeling. All rights reserved.</p>

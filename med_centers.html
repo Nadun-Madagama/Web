@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Centers</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/med.css">
 </head>
 <body>
-   <!-- Top Bar (add your page links here Fazna,Okanda,Dasuni,Dula,Isuri) -->
+   <!-- Top Bar -->
         <nav class="topBar">
             <ul class="pageLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="doctors.html">Doctors</a></li>
                 <li><a href="specialities.html">Specialities</a></li>
                 <li><a href="register.html">Register</a></li>
                 <li><a href="doctors-dashboard.html">DocDash</a></li>
@@ -19,42 +20,117 @@
             </ul>
         </nav>
         <!-- End of top bar --> 
-            <img src="images/hero.jpg" alt="Medical Team" class="topImage">
-         <!-- Image -->
+        <img src="images/hero.jpg" alt="Medical Team" class="topImage">
+        <!-- Image -->
             
+    <div class="mc-selector">
+        <h3>Select Your Medical Center</h3>
 
-    <div class="container">
-        <h2>Select a Medical Center</h2>
-
-        <select onchange="location = this.value;">
+        <select id="medicalCenter" onchange="showCenterDetails()">
             <option value="">-- Select Medical Center --</option>
-            <option value="matara.html">Matara Medical Center</option>
-            <option value="galle.html">Galle Medical Center</option>
-            <option value="colombo.html">Colombo Medical Center</option>
+            <option value="matara">Matara Medical Center</option>
+            <option value="galle">Galle Medical Center</option>
+            <option value="colombo">Colombo Medical Center</option>
         </select>
     </div>
 
+    <!-- Popup Modal -->
+    <div id="medicalModal" class="mc-modal">
+        <div class="mc-modal-content">
+            <img id="hospitalImage" src="images/hospital.jpg" alt="Hospital Image">
+            <div class="mc-details">
+                <h2 id="hospitalTitle"></h2>
+                <p id="hospitalDescription"></p>
+
+                <div class="mc-buttons">
+                    <button class="mc-proceed-btn" onclick="proceedPage()">
+                        Proceed
+                    </button>
+                    <button class="mc-cancel-btn" onclick="closeModal()">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
     <div class="button-container">
         <a href="index.html" class="home-page-btn">Home Page</a>
     </div><br>
 
-    <!-- Footer   -->
+    <script>
+    let selectedPage = "";
 
-        <footer class="footer">
-            <div class="footerColumn">
-                <h3 class="footerTitle">E-Channeling</h3>
-                <p class="footerText">Comprehensive healthcare management at your fingertips. Book your specialist appointments instantly and securely.</p>
-            </div>
-            
-            <div class="footerColumn">
-                <h3 class="footerTitle">Contact</h3>
-                <!-- Added your contact link right here -->
-                <a href="contact.html" class="footerLink">Contact Us →</a>
-            </div>
-            
-            <div class="footerBottom">
-                <p>&copy; 2026 E-Channeling. All rights reserved.</p>
-            </div>
-        </footer>
+    function showCenterDetails() {
+        const center = document.getElementById("medicalCenter").value;
+        const modal = document.getElementById("medicalModal");
+        const image = document.getElementById("hospitalImage");
+        const title = document.getElementById("hospitalTitle");
+        const description = document.getElementById("hospitalDescription");
+
+        if(center === "matara") {
+            image.src = "images/hospital.jpg";
+            title.innerHTML = "Matara Medical Center";
+            description.innerHTML = "Providing specialist consultations, modern healthcare facilities, and quality patient care with experienced medical professionals.";
+            selectedPage = "matara.html";
+        }
+        else if(center === "galle") {
+            image.src = "images/hospital.jpg";
+            title.innerHTML = "Galle Medical Center";
+            description.innerHTML = "Advanced healthcare services, expert doctors, and modern medical technologies dedicated to your wellbeing.";
+            selectedPage = "galle.html";
+        }
+        else if(center === "colombo") {
+            image.src = "images/hospital.jpg";
+            title.innerHTML = "Colombo Medical Center";
+            description.innerHTML = "Leading healthcare institution offering comprehensive treatments, specialist consultations, and patient-focused care.";
+            selectedPage = "colombo.html";
+        }
+
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("medicalModal").style.display = "none";
+        document.getElementById("medicalCenter").selectedIndex = 0;
+    }
+
+    function proceedPage() {
+        if(selectedPage !== "") {
+            window.location.href = selectedPage;
+        }
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById("medicalModal");
+        if(event.target == modal) {
+            closeModal();
+        }
+    }
+    </script>
+
+    <!-- Footer   -->
+    <footer class="footer">
+        <div class="footerColumn">
+            <h3 class="footerTitle">E-Channeling</h3>
+            <p class="footerText">Comprehensive healthcare management at your fingertips. Book your specialist appointments instantly and securely.</p>
+        </div>
+        
+        <div class="footerColumn">
+            <h3 class="footerTitle">Quick Links</h3>
+            <ul class="footerNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="specialities.html">Specialities</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="doctors-dashboard.html">DocDash</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="med_centers.html">Medical Centers</a></li>
+            </ul>
+        </div>
+        
+        <div class="footerBottom">
+            <p>&copy; 2026 E-Channeling. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
