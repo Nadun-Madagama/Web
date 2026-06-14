@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — E-Channeling</title>
+  <link rel="stylesheet" href="admin-style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+  <script src="doctors.js"></script>
+</head>
+<body class="login-page">
+
+  <!----- Top Bar ----->
+  <nav class="topBar">
+    <ul class="pageLinks">
+      <li><a href="index(1).html">Doctors</a></li>
+      <li><a href="#diseases">Diseases</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#docdash">DocDash</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!----- Login wrapper ----->
+  <main class="login-wrapper">
+
+    <div class="login-card">
+
+      <!----- Branding ----->
+      <div class="login-brand">
+        <div class="brand-icon"><i class="ti ti-stethoscope"></i></div>
+        <h1 class="brand-name">E-Channeling</h1>
+        <p class="brand-sub">DocDash Admin Portal</p>
+      </div>
+
+      <div class="login-divider"></div>
+
+      <h2 class="login-title">Admin Sign In</h2>
+      <p class="login-desc">This area is restricted to authorised administrators only.</p>
+
+      <!----- Error message ----->
+      <div class="error-box" id="error-box">
+        <i class="ti ti-alert-circle"></i>
+        <span id="error-msg">Incorrect username or password. Please try again.</span>
+      </div>
+
+      <!----- Login form ----->
+      <form class="login-form" onsubmit="handleLogin(event)">
+
+        <div class="form-field">
+          <label class="form-label" for="username">
+            <i class="ti ti-user"></i> Username
+          </label>
+          <input
+            type="text"
+            id="username"
+            class="form-input"
+            placeholder="Enter admin username"
+            autocomplete="username"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="password">
+            <i class="ti ti-lock"></i> Password
+          </label>
+          <div class="pw-wrap">
+            <input
+              type="password"
+              id="password"
+              class="form-input"
+              placeholder="Enter admin password"
+              autocomplete="current-password"
+              required
+            />
+            <button type="button" class="pw-toggle" onclick="togglePw()" aria-label="Show or hide password">
+              <i class="ti ti-eye" id="pw-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-hint">
+          <i class="ti ti-info-circle"></i>
+          Demo credentials: <strong>admin</strong> / <strong>echanneling2026</strong>
+        </div>
+
+        <button type="submit" class="login-btn" id="login-btn">
+          <span id="btn-text">Sign In</span>
+          <i class="ti ti-arrow-right" id="btn-icon"></i>
+        </button>
+
+      </form>
+
+    </div>
+
+    <!----- Side illustration panel ----->
+    <div class="login-panel">
+      <div class="panel-content">
+        <div class="panel-icon"><i class="ti ti-shield-check"></i></div>
+        <h2 class="panel-title">Secure Admin Access</h2>
+        <p class="panel-text">Manage doctor schedules, appointments, and patient records from one secure dashboard.</p>
+        <ul class="panel-features">
+          <li><i class="ti ti-check"></i> View all doctor appointments</li>
+          <li><i class="ti ti-check"></i> Manage session slots</li>
+          <li><i class="ti ti-check"></i> Track leave & availability</li>
+          <li><i class="ti ti-check"></i> Monitor daily stats</li>
+        </ul>
+        <div class="panel-stat-row">
+          <div class="panel-stat">
+            <span class="ps-num">6</span>
+            <span class="ps-label">Doctors</span>
+          </div>
+          <div class="panel-stat">
+            <span class="ps-num">500+</span>
+            <span class="ps-label">Appointments</span>
+          </div>
+          <div class="panel-stat">
+            <span class="ps-num">24/7</span>
+            <span class="ps-label">Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!----- Footer ----->
+  <footer class="footer">
+    <div class="footerColumn">
+      <h3 class="footerTitle">E-Channeling</h3>
+      <p class="footerText">Comprehensive healthcare management at your fingertips. Book your specialist appointments instantly and securely.</p>
+    </div>
+    <div class="footerColumn">
+      <h3 class="footerTitle">Contact</h3>
+      <a href="contact.html" class="footerLink">Contact Us →</a>
+    </div>
+    <div class="footerBottom">
+      <p>&copy; 2026 E-Channeling. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

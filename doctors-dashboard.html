@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors Dashboard — E-Channeling</title>
+  <link rel="stylesheet" href="admin-style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+  <script src="doctors.js"></script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <nav class="topBar">
+    <ul class="pageLinks">
+      <li><a href="index(1).html">Doctors</a></li>
+      <li><a href="#diseases">Diseases</a></li>
+      <li><a href="#register">Register</a></li>
+      <li class="active"><a href="#">DocDash</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dashboard header -->
+  <header class="dash-header">
+    <div class="dash-header-left">
+      <div class="dash-icon"><i class="ti ti-layout-dashboard"></i></div>
+      <div>
+        <h1 class="dash-title">Doctor Management</h1>
+        <p class="dash-sub">Admin Dashboard &mdash; DocDash Portal</p>
+      </div>
+    </div>
+    <div class="dash-header-right">
+      <div class="admin-chip">
+        <div class="admin-avatar">A</div>
+        <span>Administrator</span>
+      </div>
+      <a href="admin-login.html" class="logout-btn">
+        <i class="ti ti-logout"></i> Sign Out
+      </a>
+    </div>
+  </header>
+
+  <!-- Summary stats bar -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <i class="ti ti-users"></i>
+      <div>
+        <span class="stat-num">6</span>
+        <span class="stat-lbl">Total Doctors</span>
+      </div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <i class="ti ti-calendar-check"></i>
+      <div>
+        <span class="stat-num">74</span>
+        <span class="stat-lbl">Appointments Today</span>
+      </div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <i class="ti ti-activity"></i>
+      <div>
+        <span class="stat-num">5</span>
+        <span class="stat-lbl">On Duty</span>
+      </div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <i class="ti ti-calendar-off"></i>
+      <div>
+        <span class="stat-num">1</span>
+        <span class="stat-lbl">On Leave</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main class="dash-content">
+
+    <!-- Section heading -->
+    <div class="section-hd">
+      <h2 class="section-title"><i class="ti ti-stethoscope"></i> Our Doctors</h2>
+      <div class="filter-row">
+        <input type="text" class="search-input" placeholder="Search doctor or specialty…" oninput="filterCards(this.value)">
+        <select class="filter-select" onchange="filterBySpec(this.value)">
+          <option value="">All Specialties</option>
+          <option>Cardiologist</option>
+          <option>Neurologist</option>
+          <option>Orthopedic Surgeon</option>
+          <option>Pediatrician</option>
+          <option>Dermatologist</option>
+          <option>Gynecologist</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Doctor cards grid -->
+    <div class="doctor-grid" id="doctor-grid">
+
+      <!-- Doctor 1 -->
+      <div class="doc-card" data-name="dr. okanda sudusinghe" data-spec="neurologist">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#e6f1fb;color:#0c447c">OS</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Okanda Sudusinghe</h3>
+          <p class="doc-spec"><i class="ti ti-brain"></i> Neurologist</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> NHSL, Colombo</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 12 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 10:30 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:67%"></div>
+            </div>
+            <span class="slot-txt">8 / 12 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(0)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(0)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor 2 -->
+      <div class="doc-card" data-name="dr. dulsara sachintha" data-spec="cardiologist">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#faeeda;color:#854f0b">DS</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Dulsara Sachintha</h3>
+          <p class="doc-spec"><i class="ti ti-heart-rate-monitor"></i> Cardiologist</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> Colombo South Teaching Hospital</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 10 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 09:00 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:50%"></div>
+            </div>
+            <span class="slot-txt">5 / 10 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(1)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(1)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor 3 -->
+      <div class="doc-card" data-name="dr. achinthya pasansith" data-spec="orthopedic surgeon">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#eaf3de;color:#3b6d11">AP</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Achinthya Pasansith</h3>
+          <p class="doc-spec"><i class="ti ti-bone"></i> Orthopedic Surgeon</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> Kandy General Hospital</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 14 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 11:00 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:86%"></div>
+            </div>
+            <span class="slot-txt">12 / 14 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(2)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(2)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor 4 -->
+      <div class="doc-card" data-name="dr. isuri deemanthi" data-spec="pediatrician">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#fcebeb;color:#a32d2d">ID</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Isuri Deemanthi</h3>
+          <p class="doc-spec"><i class="ti ti-baby-carriage"></i> Pediatrician</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> Lady Ridgeway Hospital</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 18 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 08:30 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:100%"></div>
+            </div>
+            <span class="slot-txt">18 / 18 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(3)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(3)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor 5 -->
+      <div class="doc-card" data-name="dr. dasuni rajapaksa" data-spec="dermatologist">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#f0ede6;color:#5f5e5a">DR</div>
+          <div class="doc-badge on-leave">On Leave</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Dasuni Rajapaksa</h3>
+          <p class="doc-spec"><i class="ti ti-sparkles"></i> Dermatologist</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> National Hospital, Colombo</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 0 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Returns: 16 Jun</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:0%"></div>
+            </div>
+            <span class="slot-txt">0 / 0 slots — on leave</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(4)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(4)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor 6 -->
+      <div class="doc-card" data-name="dr. nadun madagama" data-spec="gynecologist">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#e6f1fb;color:#185FA5">NM</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Nadun Madagama</h3>
+          <p class="doc-spec"><i class="ti ti-gender-female"></i> Gynecologist</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> De Soysa Hospital, Colombo</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 20 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 08:00 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:75%"></div>
+            </div>
+            <span class="slot-txt">15 / 20 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(5)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(5)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor 7 -->
+      <div class="doc-card" data-name="dr. fazna kamil" data-spec="pediatrician">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#fcebeb;color:#a32d2d">FK</div>
+          <div class="doc-badge on-duty">On Duty</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Fazna Kamil</h3>
+          <p class="doc-spec"><i class="ti ti-baby-carriage"></i> Pediatrician</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> Lady Ridgeway Hospital</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 18 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Next: 08:30 AM</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:100%"></div>
+            </div>
+            <span class="slot-txt">18 / 18 slots filled</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(6)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(6)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+       <!-- Doctor 8 -->
+      <div class="doc-card" data-name="dr. nisal dasanayake" data-spec="Gynecologist">
+        <div class="doc-card-top">
+          <div class="doc-avatar" style="background:#f0ede6;color:#5f5e5a">ND</div>
+          <div class="doc-badge on-leave">On Leave</div>
+        </div>
+        <div class="doc-card-body">
+          <h3 class="doc-name">Dr. Nisal Dasanayake</h3>
+          <p class="doc-spec"><i class="ti ti-sparkles"></i> Dermatologist</p>
+          <p class="doc-hospital"><i class="ti ti-building-hospital"></i> National Hospital, Colombo</p>
+          <div class="doc-appt-row">
+            <span class="appt-count"><i class="ti ti-calendar-event"></i> 0 today</span>
+            <span class="appt-next"><i class="ti ti-clock"></i> Returns: 16 Jun</span>
+          </div>
+          <div class="doc-slots">
+            <div class="slot-bar">
+              <div class="slot-fill" style="width:0%"></div>
+            </div>
+            <span class="slot-txt">0 / 0 slots — on leave</span>
+          </div>
+        </div>
+        <div class="doc-card-footer">
+          <button class="view-btn" onclick="openDocModal(7)">
+            <i class="ti ti-eye"></i> View Schedule
+          </button>
+          <button class="appt-btn" onclick="openApptModal(7)">
+            <i class="ti ti-calendar-plus"></i> Appointments
+          </button>
+        </div>
+      </div>
+
+    </div><!-- end doctor-grid -->
+
+    <!-- Empty state (hidden) -->
+    <div class="empty-state" id="empty-state" style="display:none">
+      <i class="ti ti-search-off"></i>
+      <p>No doctors match your search.</p>
+    </div>
+
+  </main>
+
+  <!-- Modal overlay -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+    <div class="modal-box" id="modal-box" onclick="event.stopPropagation()"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footerColumn">
+      <h3 class="footerTitle">E-Channeling</h3>
+      <p class="footerText">Comprehensive healthcare management at your fingertips. Book your specialist appointments instantly and securely.</p>
+    </div>
+    <div class="footerColumn">
+      <h3 class="footerTitle">Contact</h3>
+      <a href="contact.html" class="footerLink">Contact Us →</a>
+    </div>
+    <div class="footerBottom">
+      <p>&copy; 2026 E-Channeling. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
