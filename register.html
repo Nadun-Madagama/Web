@@ -3,19 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <title>E-Channeling | Register</title>
-        <link rel="stylesheet" href="Styles.css">
-        <link rel="stylesheet" href="register.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 
         <!-- Top Bar -->
     <nav class="topBar">
         <ul class="pageLinks">
+          <li><a href="index.html">Home</a></li>
           <li><a href="doctors.html">Doctors</a></li>
           <li><a href="specialities.html">Specialities</a></li>
           <li class="active"><a href="register.html">Register</a></li>
           <li><a href="doctors-dashboard.html">DocDash</a></li>
           <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="med_centers.html">Medical Centers</a></li>
         </ul>
     </nav>
         <!-- End of Top Bar -->
@@ -50,7 +52,7 @@
         </div>
 
         <!-- Form Container -->
-        <div class="formContainer">
+        <form class="formContainer" id="registrationForm" onsubmit="event.preventDefault();">
 
             <!-- Step 1: Personal Information -->
             <div class="formStep" id="step1">
@@ -106,7 +108,7 @@
                 </div>
 
                 <div class="btnRow">
-                    <button class="btnNext" onclick="goToStep(2)">Next →</button>
+                    <button type="button" class="btnNext" onclick="goToStep(2)">Next →</button>
                 </div>
             </div>
 
@@ -157,8 +159,8 @@
                 </div>
 
                 <div class="btnRow">
-                    <button class="btnBack" onclick="goToStep(1)">← Back</button>
-                    <button class="btnNext" onclick="goToStep(3)">Next →</button>
+                    <button type="button" class="btnBack" onclick="goToStep(1)">← Back</button>
+                    <button type="button" class="btnNext" onclick="goToStep(3)">Next →</button>
                 </div>
             </div>
 
@@ -171,11 +173,11 @@
                     <!-- Doctors are populated by JavaScript -->
                 </div>
 
-                <span class="errorMsg" id="doctorError" style="display:block; text-align:center; margin-bottom:15px;">Please select a doctor.</span>
+                <span class="errorMsg" id="doctorError" style="display:none; text-align:center; margin-bottom:15px;">Please select a doctor.</span>
 
                 <div class="btnRow">
-                    <button class="btnBack" onclick="goToStep(2)">← Back</button>
-                    <button class="btnNext" onclick="goToStep(4)">Next →</button>
+                    <button type="button" class="btnBack" onclick="goToStep(2)">← Back</button>
+                    <button type="button" class="btnNext" onclick="goToStep(4)">Next →</button>
                 </div>
             </div>
 
@@ -195,8 +197,8 @@
                 </div>
 
                 <div class="btnRow">
-                    <button class="btnBack" onclick="goToStep(3)">← Back</button>
-                    <button class="btnSubmit" onclick="submitForm()">Confirm Appointment ✓</button>
+                    <button type="button" class="btnBack" onclick="goToStep(3)">← Back</button>
+                    <button type="button" class="btnSubmit" onclick="submitForm()">Confirm Appointment ✓</button>
                 </div>
             </div>
 
@@ -207,11 +209,11 @@
                     <h2>Appointment Booked!</h2>
                     <p id="successMessage"></p>
                     <p class="successNote">A confirmation will be sent to your email. Please arrive 10 minutes early.</p>
-                    <button class="btnNext" onclick="resetForm()">Book Another Appointment</button>
+                    <button type="button" class="btnNext" onclick="resetForm()">Book Another Appointment</button>
                 </div>
             </div>
 
-        </div>
+        </form>
         <!-- End of Form Container -->
 
         <!-- Footer -->
@@ -231,6 +233,7 @@
             </div>
         </footer>
 
-        <script src="register.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/register.js"></script>
     </body>
 </html>
